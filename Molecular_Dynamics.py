@@ -232,23 +232,3 @@ obj = NVME(30, 100, 1, 0.1, 500)
 obj.simulate()
 obj.plot_gr()
 
-# def temperature(vel):
-#     v2 = np.sum(vel ** 2, axis=1)
-#     Tbath = np.mean(v2) / 2
-#     return Tbath
-
-# # Berendsen thermostat
-# T_current = temperature(vel_half)
-# scale_factor = np.sqrt(1 + 0.0025 * (T_desired / T_current - 1))
-# vel_scaled = vel_half * scale_factor
-# vel_new = vel_scaled + 0.5 * forces_new * dt
-
-# ke_new = np.sum(0.5 * np.sum(vel_new ** 2, axis=1))
-# pe_new = 0  # potential energy with new forces
-# for i in range(N):
-#     for j in range(i + 1, N):
-#         r = pos[j] - pos[i]
-#         r = r - L * np.round(r / L)  # minimum image convention
-#         r_mag = np.linalg.norm(r)
-#         pe_new += lj_potential(r_mag, 2.5)
-# total_e = ke_new + pe_new  # total energy
